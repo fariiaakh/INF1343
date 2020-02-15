@@ -60,3 +60,18 @@ CREATE TABLE `player_roster` (
   CONSTRAINT `roster_to_season` FOREIGN KEY (`season_year`) REFERENCES `season` (`season_year`),
   CONSTRAINT `roster_to_team` FOREIGN KEY (`team_name`) REFERENCES `team` (`team_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+/* PLAYER STATS TABLE*/
+CREATE TABLE `player_stats` (
+  `hp_id` int(11) NOT NULL,
+  `season_year` char(7) NOT NULL,
+  `games_played` int(11) DEFAULT NULL,
+  `points` int(11) DEFAULT NULL,
+  `ice_time` varchar(45) DEFAULT NULL,
+  `assists` int(11) DEFAULT NULL,
+  `penalty_time` varchar(45) DEFAULT NULL,
+  `team_name` varchar(45) NOT NULL,
+  PRIMARY KEY (`hp_id`,`season_year`,`team_name`),
+  CONSTRAINT `pstats_to_roster` FOREIGN KEY (`hp_id`, `season_year`, `team_name`) REFERENCES `player_roster` (`hp_id`, `season_year`, `team_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
