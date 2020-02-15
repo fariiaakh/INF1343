@@ -25,3 +25,23 @@ CREATE TABLE `player` (
   PRIMARY KEY (`hp_id`),
   CONSTRAINT `player_to_hp` FOREIGN KEY (`hp_id`) REFERENCES `hockey_person` (`hp_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+/* TEAM TABLE */
+CREATE TABLE `team` (
+  `team_name` varchar(45) NOT NULL,
+  `conference` enum('Western','Eastern') NOT NULL,
+  `division` enum('Metropolitan','Atlantic','Central','Pacific') NOT NULL,
+  PRIMARY KEY (`team_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+/* SEASON TABLE */
+CREATE TABLE `season` (
+  `season_year` char(7) NOT NULL,
+  `start_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
+  `salary_cap` decimal(11,2) DEFAULT NULL,
+  `champion` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`season_year`),
+  KEY `season_to_winning_team_idx` (`champion`),
+  CONSTRAINT `season_to_winning_team` FOREIGN KEY (`champion`) REFERENCES `team` (`team_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
