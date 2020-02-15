@@ -23,7 +23,7 @@ CREATE TABLE `player` (
   `height_inches` int(11) DEFAULT NULL,
   `picture` longblob,
   PRIMARY KEY (`hp_id`),
-  CONSTRAINT `player_to_hp` FOREIGN KEY (`hp_id`) REFERENCES `hockey_person` (`hp_id`)
+  CONSTRAINT `player_to_hp` FOREIGN KEY (`hp_id`) REFERENCES `hockey_person` (`hp_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 /* TEAM TABLE */
