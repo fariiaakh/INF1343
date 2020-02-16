@@ -31,7 +31,25 @@ CREATE TABLE `team` (
   `team_name` varchar(45) NOT NULL,
   `conference` enum('Western','Eastern') NOT NULL,
   `division` enum('Metropolitan','Atlantic','Central','Pacific') NOT NULL,
-  PRIMARY KEY (`team_name`)
+  PRIMARY KEY (`team_name`),
+  KEY `conf` (`conference`),
+  KEY `div` (`division`),
+  KEY `standings_to_teams` (`team_name`,`division`,`conference`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+/* TEAM STANDINGS TABLE */
+CREATE TABLE `team_standing` (
+  `team_name` varchar(45) NOT NULL,
+  `season_year` varchar(45) NOT NULL,
+  `division` enum('Metropolitan','Atlantic','Central','Pacific') DEFAULT NULL,
+  `conference` enum('Western','Eastern') DEFAULT NULL,
+  `games_played` int(11) DEFAULT NULL,
+  `points` int(11) DEFAULT NULL,
+  `wins` int(11) DEFAULT NULL,
+  `losses` int(11) DEFAULT NULL,
+  `overtime_losses` int(11) DEFAULT NULL,
+  KEY `standings_to_teams_idx` (`team_name`,`division`,`conference`),
+  CONSTRAINT `standings_to_teams` FOREIGN KEY (`team_name`, `division`, `conference`) REFERENCES `team` (`team_name`, `division`, `conference`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 /* SEASON TABLE */
