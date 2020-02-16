@@ -75,3 +75,29 @@ CREATE TABLE `player_stats` (
   PRIMARY KEY (`hp_id`,`season_year`,`team_name`),
   CONSTRAINT `pstats_to_roster` FOREIGN KEY (`hp_id`, `season_year`, `team_name`) REFERENCES `player_roster` (`hp_id`, `season_year`, `team_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+/* MATCH TABLE */
+CREATE TABLE `match` (
+  `match_id` int(11) NOT NULL AUTO_INCREMENT,
+  `match_date` date NOT NULL,
+  `home_team` varchar(45) NOT NULL,
+  `visiting_team` varchar(45) NOT NULL,
+  `season` char(7) NOT NULL,
+  `home_score` int(2) DEFAULT NULL,
+  `visiting_score` int(2) DEFAULT NULL,
+  `winner` varchar(45) DEFAULT NULL,
+  `loser` varchar(45) DEFAULT NULL,
+  `pre_post_reg_season` enum('regular season','postseason','preseason') NOT NULL,
+  PRIMARY KEY (`match_id`),
+  KEY `match_to_hometeam_idx` (`home_team`),
+  KEY `match_to_visitingteam_idx` (`visiting_team`),
+  KEY `match_to_season_idx` (`season`),
+  KEY `match_to_winner_idx` (`winner`),
+  KEY `match_to_loser_idx` (`loser`),
+  CONSTRAINT `match_to_hometeam` FOREIGN KEY (`home_team`) REFERENCES `team` (`team_name`),
+  CONSTRAINT `match_to_loser` FOREIGN KEY (`loser`) REFERENCES `team` (`team_name`),
+  CONSTRAINT `match_to_season` FOREIGN KEY (`season`) REFERENCES `season` (`season_year`),
+  CONSTRAINT `match_to_visitingteam` FOREIGN KEY (`visiting_team`) REFERENCES `team` (`team_name`),
+  CONSTRAINT `match_to_winner` FOREIGN KEY (`winner`) REFERENCES `team` (`team_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
