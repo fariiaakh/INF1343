@@ -81,7 +81,6 @@ CREATE TABLE `player_roster` (
   CONSTRAINT `roster_to_team` FOREIGN KEY (`team_name`) REFERENCES `team` (`team_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
-
 /* PLAYER STATS TABLE*/
 CREATE TABLE `player_stats` (
   `hp_id` int(11) NOT NULL,
@@ -96,6 +95,26 @@ CREATE TABLE `player_stats` (
   CONSTRAINT `pstats_to_roster` FOREIGN KEY (`hp_id`, `season_year`, `team_name`) REFERENCES `player_roster` (`hp_id`, `season_year`, `team_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
+/*SKATER STATS TABLE*/
+CREATE TABLE `skater_stats` (
+  `hp_id` int(11) NOT NULL,
+  `season_year` char(7) NOT NULL,
+  `position` enum('Forward','Defence') NOT NULL,
+  `shots_on_goal` int(11) DEFAULT NULL,
+  PRIMARY KEY (`hp_id`,`season_year`),
+  CONSTRAINT `skater_stats_to_pstats` FOREIGN KEY (`hp_id`, `season_year`) REFERENCES `player_stats` (`hp_id`, `season_year`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+/*GOALIE STATS TABLE*/
+CREATE TABLE `goalie_stats` (
+  `hp_id` int(11) NOT NULL,
+  `season_year` char(7) NOT NULL,
+  `goals_allowed` int(11) DEFAULT NULL,
+  `shutouts` int(11) DEFAULT NULL,
+  `average_goals_allowed` int(11) DEFAULT NULL,
+  PRIMARY KEY (`hp_id`,`season_year`),
+  CONSTRAINT `goalie_stats_to_pstats` FOREIGN KEY (`hp_id`, `season_year`) REFERENCES `player_stats` (`hp_id`, `season_year`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 /* MATCH TABLE */
 CREATE TABLE `match` (
