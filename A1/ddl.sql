@@ -87,7 +87,7 @@ CREATE TABLE `player_stats` (
   `season_year` char(7) NOT NULL,
   `games_played` int(11) DEFAULT NULL,
   `points` int(11) DEFAULT NULL,
-  `ice_time` varchar(45) DEFAULT NULL,
+  `ice_time_minutes` decimal(8,2) DEFAULT NULL,
   `assists` int(11) DEFAULT NULL,
   `penalty_time` varchar(45) DEFAULT NULL,
   `team_name` varchar(45) NOT NULL,
