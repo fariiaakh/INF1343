@@ -109,9 +109,11 @@ CREATE TABLE `skater_stats` (
 CREATE TABLE `goalie_stats` (
   `hp_id` int(11) NOT NULL,
   `season_year` char(7) NOT NULL,
+  `shots_against` varchar(45) DEFAULT NULL,
   `goals_allowed` int(11) DEFAULT NULL,
-  `shutouts` int(11) DEFAULT NULL,
+  `save_percentage` decimal(4,2) DEFAULT NULL,
   `average_goals_allowed` int(11) DEFAULT NULL,
+  `shutouts` int(11) DEFAULT NULL,
   PRIMARY KEY (`hp_id`,`season_year`),
   CONSTRAINT `goalie_stats_to_pstats` FOREIGN KEY (`hp_id`, `season_year`) REFERENCES `player_stats` (`hp_id`, `season_year`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
