@@ -40,7 +40,7 @@ CREATE TABLE `team` (
 /* TEAM STANDINGS TABLE */
 CREATE TABLE `team_standing` (
   `team_name` varchar(45) NOT NULL,
-  `season_year` varchar(45) NOT NULL,
+  `season_year` char(7) NOT NULL,
   `division` enum('Metropolitan','Atlantic','Central','Pacific') DEFAULT NULL,
   `conference` enum('Western','Eastern') DEFAULT NULL,
   `games_played` int(11) DEFAULT NULL,
@@ -49,7 +49,9 @@ CREATE TABLE `team_standing` (
   `losses` int(11) DEFAULT NULL,
   `overtime_losses` int(11) DEFAULT NULL,
   KEY `standings_to_teams_idx` (`team_name`,`division`,`conference`),
-  CONSTRAINT `standings_to_teams` FOREIGN KEY (`team_name`, `division`, `conference`) REFERENCES `team` (`team_name`, `division`, `conference`)
+  KEY `standings_to_season_idx` (`season_year`),
+  CONSTRAINT `standings_to_season` FOREIGN KEY (`season_year`) REFERENCES `season` (`season_year`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `standings_to_teams` FOREIGN KEY (`team_name`, `division`, `conference`) REFERENCES `team` (`team_name`, `division`, `conference`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 /* SEASON TABLE */
