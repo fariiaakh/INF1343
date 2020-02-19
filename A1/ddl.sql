@@ -147,6 +147,7 @@ CREATE TABLE `match` (
   KEY `match_to_season_idx` (`season`),
   KEY `match_to_winner_idx` (`winner`),
   KEY `match_to_loser_idx` (`loser`),
+  KEY `match_date_idx` (`match_id`,`match_date`),
   CONSTRAINT `match_to_hometeam` FOREIGN KEY (`home_team`) REFERENCES `team` (`team_name`),
   CONSTRAINT `match_to_loser` FOREIGN KEY (`loser`) REFERENCES `team` (`team_name`),
   CONSTRAINT `match_to_season` FOREIGN KEY (`season`) REFERENCES `season` (`season_year`),
