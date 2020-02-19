@@ -3,27 +3,22 @@ CREATE TABLE `hockey_person` (
   `hp_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   `birthday` date DEFAULT NULL,
-  PRIMARY KEY (`hp_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
-
-/* STAFF TABLE */
-CREATE TABLE `staff` (
-  `hp_id` int(11) NOT NULL,
-  `title` varchar(45) NOT NULL,
-  `start_date` date DEFAULT NULL,
-  `end_date` date DEFAULT NULL COMMENT 'there should be a check to ensure that end_date is later than start_date',
   PRIMARY KEY (`hp_id`),
-  CONSTRAINT `staff_to_hp` FOREIGN KEY (`hp_id`) REFERENCES `hockey_person` (`hp_id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `name_idx` (`name`),
+  KEY `name_id` (`hp_id`,`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 /* PLAYER TABLE */
 CREATE TABLE `player` (
   `hp_id` int(11) NOT NULL,
-  `position` enum('forward','defense','goalie') NOT NULL,
-  `height_inches` int(11) DEFAULT NULL,
+  `name` varchar(45) NOT NULL,
+  `player_position` enum('Forward','Defence','Goalie') NOT NULL,
+  `height_inches` int(2) DEFAULT NULL,
   `picture` longblob,
   PRIMARY KEY (`hp_id`),
-  CONSTRAINT `player_to_hp` FOREIGN KEY (`hp_id`) REFERENCES `hockey_person` (`hp_id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `name` (`name`),
+  KEY `name_id` (`hp_id`,`name`),
+  CONSTRAINT `player_to_hp` FOREIGN KEY (`hp_id`) REFERENCES `hockey_person` (`hp_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 /* TEAM TABLE */
@@ -67,18 +62,34 @@ CREATE TABLE `season` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 /* ROSTER TABLE */
-CREATE TABLE `player_roster` (
+CREATE TABLE `roster` (
   `hp_id` int(11) NOT NULL,
+  `name` varchar(45) NOT NULL,
   `season_year` char(7) NOT NULL,
   `team_name` varchar(45) NOT NULL,
   `player_salary` decimal(10,2) DEFAULT NULL,
   `jersey_number` int(2) NOT NULL,
-  PRIMARY KEY (`hp_id`,`team_name`,`season_year`),
+  PRIMARY KEY (`hp_id`,`name`),
   KEY `roster_to_season_idx` (`season_year`),
   KEY `roster_to_team_idx` (`team_name`),
-  CONSTRAINT `roster_to_player` FOREIGN KEY (`hp_id`) REFERENCES `player` (`hp_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  KEY `idx_player_roster_hp_id_season_year` (`hp_id`,`season_year`) /*!80000 INVISIBLE */,
+  KEY `name_idx` (`name`),
+  CONSTRAINT `roster_to_player` FOREIGN KEY (`hp_id`, `name`) REFERENCES `player` (`hp_id`, `name`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `roster_to_season` FOREIGN KEY (`season_year`) REFERENCES `season` (`season_year`),
   CONSTRAINT `roster_to_team` FOREIGN KEY (`team_name`) REFERENCES `team` (`team_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+/* WORKS FOR TABLE */
+CREATE TABLE `works_for` (
+  `hp_id` int(11) NOT NULL,
+  `staff_name` varchar(45) NOT NULL,
+  `team_name` varchar(45) NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date DEFAULT NULL,
+  KEY `works_for_to_hp_idx` (`hp_id`,`staff_name`),
+  KEY `works_for_to_team_idx` (`team_name`),
+  CONSTRAINT `works_for_to_hp` FOREIGN KEY (`hp_id`, `staff_name`) REFERENCES `hockey_person` (`hp_id`, `name`),
+  CONSTRAINT `works_for_to_team` FOREIGN KEY (`team_name`) REFERENCES `team` (`team_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 /* PLAYER STATS TABLE*/
