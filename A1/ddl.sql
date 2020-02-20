@@ -61,7 +61,6 @@ CREATE TABLE `season` (
   CONSTRAINT `season_to_winning_team` FOREIGN KEY (`champion`) REFERENCES `team` (`team_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
-/* ROSTER TABLE */
 CREATE TABLE `roster` (
   `hp_id` int(11) NOT NULL,
   `name` varchar(45) NOT NULL,
@@ -69,12 +68,12 @@ CREATE TABLE `roster` (
   `team_name` varchar(45) NOT NULL,
   `player_salary` decimal(10,2) DEFAULT NULL,
   `jersey_number` int(2) NOT NULL,
-  PRIMARY KEY (`hp_id`,`name`),
+  PRIMARY KEY (`hp_id`,`season_year`,`team_name`),
   KEY `roster_to_season_idx` (`season_year`),
   KEY `roster_to_team_idx` (`team_name`),
   KEY `idx_player_roster_hp_id_season_year` (`hp_id`,`season_year`) /*!80000 INVISIBLE */,
   KEY `name_idx` (`name`),
-  CONSTRAINT `roster_to_player` FOREIGN KEY (`hp_id`, `name`) REFERENCES `player` (`hp_id`, `name`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `roster_to_player` FOREIGN KEY (`hp_id`) REFERENCES `player` (`hp_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `roster_to_season` FOREIGN KEY (`season_year`) REFERENCES `season` (`season_year`),
   CONSTRAINT `roster_to_team` FOREIGN KEY (`team_name`) REFERENCES `team` (`team_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
@@ -95,15 +94,17 @@ CREATE TABLE `works_for` (
 /* PLAYER STATS TABLE*/
 CREATE TABLE `player_stats` (
   `hp_id` int(11) NOT NULL,
+  `player_name` varchar(45) NOT NULL,
   `season_year` char(7) NOT NULL,
-  `games_played` int(11) DEFAULT NULL,
-  `points` int(11) DEFAULT NULL,
-  `ice_time_minutes` decimal(8,2) DEFAULT NULL,
-  `assists` int(11) DEFAULT NULL,
-  `penalty_time` varchar(45) DEFAULT NULL,
   `team_name` varchar(45) NOT NULL,
+  `games_played` int(11) DEFAULT NULL,
+  `total_points` int(11) DEFAULT NULL,
+  `total_goals` int(11) DEFAULT NULL,
+  `total_assists` int(11) DEFAULT NULL,
+  `total_ice_time` decimal(8,2) DEFAULT NULL,
+  `total_penalty_time` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`hp_id`,`season_year`,`team_name`),
-  CONSTRAINT `pstats_to_roster` FOREIGN KEY (`hp_id`, `season_year`, `team_name`) REFERENCES `player_roster` (`hp_id`, `season_year`, `team_name`)
+  CONSTRAINT `pstats_to_roster` FOREIGN KEY (`hp_id`, `season_year`, `team_name`) REFERENCES `roster` (`hp_id`, `season_year`, `team_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 /*SKATER STATS TABLE*/
