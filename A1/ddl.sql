@@ -110,24 +110,28 @@ CREATE TABLE `player_stats` (
 /*SKATER STATS TABLE*/
 CREATE TABLE `skater_stats` (
   `hp_id` int(11) NOT NULL,
+  `player_name` varchar(45) NOT NULL,
+  `team_name` varchar(45) NOT NULL,
   `season_year` char(7) NOT NULL,
-  `position` enum('Forward','Defence') NOT NULL,
-  `shots_on_goal` int(11) DEFAULT NULL,
-  PRIMARY KEY (`hp_id`,`season_year`),
-  CONSTRAINT `skater_stats_to_pstats` FOREIGN KEY (`hp_id`, `season_year`) REFERENCES `player_stats` (`hp_id`, `season_year`)
+  `skater_position` enum('Forward','Defence') NOT NULL,
+  `total_shots_on_goal` int(11) DEFAULT NULL,
+  PRIMARY KEY (`hp_id`,`season_year`,`team_name`),
+  CONSTRAINT `skater_stats_to_pstats` FOREIGN KEY (`hp_id`, `season_year`, `team_name`) REFERENCES `player_stats` (`hp_id`, `season_year`, `team_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 /*GOALIE STATS TABLE*/
 CREATE TABLE `goalie_stats` (
   `hp_id` int(11) NOT NULL,
+  `player_name` varchar(45) NOT NULL,
+  `team_name` varchar(45) NOT NULL,
   `season_year` char(7) NOT NULL,
-  `shots_against` varchar(45) DEFAULT NULL,
+  `total_shots_against` int(11) DEFAULT NULL,
   `goals_allowed` int(11) DEFAULT NULL,
   `save_percentage` decimal(4,2) DEFAULT NULL,
   `average_goals_allowed` int(11) DEFAULT NULL,
   `shutouts` int(11) DEFAULT NULL,
-  PRIMARY KEY (`hp_id`,`season_year`),
-  CONSTRAINT `goalie_stats_to_pstats` FOREIGN KEY (`hp_id`, `season_year`) REFERENCES `player_stats` (`hp_id`, `season_year`)
+  PRIMARY KEY (`hp_id`,`season_year`,`team_name`),
+  CONSTRAINT `goalie_stats_to_pstats` FOREIGN KEY (`hp_id`, `season_year`, `team_name`) REFERENCES `player_stats` (`hp_id`, `season_year`, `team_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 /* MATCH TABLE */
