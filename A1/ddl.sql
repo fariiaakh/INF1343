@@ -3,6 +3,7 @@ CREATE TABLE `hockey_person` (
   `hp_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   `birthday` date DEFAULT NULL,
+  `age` int(3) DEFAULT NULL,
   PRIMARY KEY (`hp_id`),
   KEY `name_idx` (`name`),
   KEY `name_id` (`hp_id`,`name`)
@@ -158,4 +159,28 @@ CREATE TABLE `match` (
   CONSTRAINT `match_to_season` FOREIGN KEY (`season`) REFERENCES `season` (`season_year`),
   CONSTRAINT `match_to_visitingteam` FOREIGN KEY (`visiting_team`) REFERENCES `team` (`team_name`),
   CONSTRAINT `match_to_winner` FOREIGN KEY (`winner`) REFERENCES `team` (`team_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+/* PLAYS IN TABLE */
+CREATE TABLE `plays_in` (
+  `hp_id` int(11) NOT NULL,
+  `player_name` varchar(45) NOT NULL,
+  `team_name` varchar(45) NOT NULL,
+  `season_year` char(7) NOT NULL,
+  `match_id` int(11) NOT NULL,
+  `match_date` date NOT NULL,
+  `ice_time_minutes` decimal(4,2) NOT NULL,
+  `penalty_time_minutes` decimal(4,2) NOT NULL,
+  `goals` int(2) NOT NULL,
+  `assists` int(11) NOT NULL,
+  `points` int(11) NOT NULL,
+  `shots_on_goal` int(11) DEFAULT NULL,
+  `shots_against` int(11) DEFAULT NULL,
+  `goals_allowed` int(11) DEFAULT NULL,
+  PRIMARY KEY (`hp_id`,`team_name`,`season_year`,`match_id`),
+  KEY `pl_to_match_idx` (`match_id`,`match_date`),
+  KEY `pl_to_roster` (`hp_id`,`season_year`,`team_name`),
+  CONSTRAINT `pl_to_match` FOREIGN KEY (`match_id`, `match_date`) REFERENCES `match` (`match_id`, `match_date`),
+  CONSTRAINT `pl_to_roster` FOREIGN KEY (`hp_id`, `season_year`, `team_name`) REFERENCES `roster` (`hp_id`, `season_year`, `team_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
