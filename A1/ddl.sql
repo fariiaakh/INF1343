@@ -184,3 +184,16 @@ CREATE TABLE `plays_in` (
   CONSTRAINT `pl_to_match` FOREIGN KEY (`match_id`, `match_date`) REFERENCES `match` (`match_id`, `match_date`),
   CONSTRAINT `pl_to_roster` FOREIGN KEY (`hp_id`, `season_year`, `team_name`) REFERENCES `roster` (`hp_id`, `season_year`, `team_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+/* AWARDS TABLE */
+CREATE TABLE `award` (
+  `season_year` char(7) NOT NULL,
+  `award_name` varchar(45) NOT NULL,
+  `winner_id` int(11) DEFAULT NULL,
+  `winner_name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`season_year`,`award_name`),
+  KEY `winner_to_player_idx` (`winner_id`,`winner_name`),
+  CONSTRAINT `award_to_player` FOREIGN KEY (`winner_id`, `winner_name`) REFERENCES `player` (`hp_id`, `name`),
+  CONSTRAINT `award_to_season` FOREIGN KEY (`season_year`) REFERENCES `season` (`season_year`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
