@@ -1,147 +1,147 @@
-﻿hp_id,name,player_position,height_inches
-,Paul Byron,Forward,"5' 8"""
-,Phillip Danault,Forward,"6' 0"""
-,Max Domi,Forward,"5' 10"""
-,Jonathan Drouin,Forward,"5' 11"""
-,Jake Evans,Forward,"6' 1"""
-,Nick Suzuki,Forward,"5' 11"""
-,Jordan Weal,Forward,"5' 9"""
-,Charles Hudon,Forward,"5' 10"""
-,Artturi Lehkonen,Forward,"6' 0"""
-,Tomas Tatar,Forward,"5' 11"""
-,Joel Armia,Forward,"6' 3"""
-,Brendan Gallagher,Forward,"5' 9"""
-,Dale Weise,Forward,"6' 2"""
-,Karl Alzner,Defence,"6' 3"""
-,Ben Chiaro,Defence,"6' 3"""
-,Christian Folin,Defence,"6' 3"""
-,Brett Kulak,Defence,"6' 2"""
-,Victor Mete,Defence,"5' 9"""
-,Xavier Ouellet,Defence,"6' 1"""
-,Jeff Petry,Defence,"6' 3"""
-,Shea Weber,Defence,"6' 4"""
-,Charlie Lindgren,Goalie,"6' 1"""
-,Carey Price,Goalie,"6' 3"""
-,Frederik Gauthier,Forward,"6' 5"""
-,Zach Hyman,Forward,"6' 1"""
-,Alexander Kerfoot,Forward,"5' 10"""
-,Denis Malgin,Forward,"5' 9"""
-,Mitch Marner,Forward,"6' 0"""
-,Auston Matthews,Forward,"6' 2"""
-,Jason Spezza,Forward,"6' 3"""
-,John Tavares,Forward,"6' 1"""
-,Kyle Clifford,Forward,"6' 2"""
-,Pierre Engvall,Forward,"6' 5"""
-,Andreas Johnsson,Forward,"5' 10"""
-,Kasperi Kapanen,Forward,"6' 1"""
-,Ilya Mikheyev,Forward,"6' 3"""
-,William Nylander,Forward,"6' 0"""
-,Tyson Barrie,Defence,"5' 10"""
-,Cody Ceci,Defence,"6' 3"""
-,Travis Dermott,Defence,"6' 0"""
-,Justin Hol,Defence,"6' 3"""
-,Martin Marincin,Defence,"6' 4"""
-,Jake Muzzi,Defence,"6' 3"""
-,Morgan Rielly,Defence,"6' 1"""
-,Calle Rosen,Defence,"6' 1"""
-,Rasmus Sandin,Defence,"5' 11"""
-,Frederik Andersen,Goalie,"6' 4"""
-,Jack Campbell,Goalie,"6' 3"""
-,Drake Caggiula,Forward,"5' 10"""
-,Ryan Carpenter,Forward,"6' 0"""
-,Kirby Dach,Forward,"6' 4"""
-,Matthew Highmore,Forward,"5' 11"""
-,David Kampf,Forward,"6' 2"""
-,Andrew Shaw,Forward,"5' 11"""
-,Zack Smith,Forward,"6' 2"""
-,Dylan Strome,Forward,"6' 3"""
-,Jonathan Toews,Forward,"6' 2"""
-,Brandon Hagel,Defence,"5' 11"""
-,Dominik Kubali,Defence,"6' 2"""
-,Alex Nylander,Defence,"6' 1"""
-,Brandon Saad,Defence,"6' 1"""
-,Alex DeBrincat,Defence,"5' 7"""
-,Patrick Kane,Defence,"5' 10"""
-,Nicolas Beaudin,Defence,"5' 11"""
-,Adam Boqvist,Defence,"5' 11"""
-,Lucas Carlsson,Defence,"6' 0"""
-,Duncan Keit,Defence,"6' 1"""
-,Slater Koekkoek,Defence,"6' 2"""
-,Olli Maatt,Defence,"6' 2"""
-,Connor Murph,Defence,"6' 4"""
-,Brent Seabroo,Defence,"6' 3"""
-,Nick Seeler,Defence,"6' 2"""
-,Calvin de Haan,Defence,"6' 1"""
-,Corey Crawford,Goalie,"6' 2"""
-,Malcolm Subban,Goalie,"6' 2"""
-,Patrice Bergeron,Forward,"6'1"""
-,Anders Bjork,Forward,"6'0"""
-,Anton Blidh,Forward,"6'0"""
-,Brandon Carlo,Defence,"6'5"""
-,Zdeno Chara (C),Defence,"6'9"""
-,Connor Clifton,Defence,"5'11"""
-,Charlie Coyle,Forward,"6'3"""
-,Jake DeBrusk,Forward,"6'0"""
-,Matt Grzelcyk,Defence,"5'9"""
-,Jaroslav Halak,Goalie,"5'11"""
-,Ondrej Kase,Forward,"5'11"""
-,David Krejci,Forward,"6'0"""
-,Torey Krug,Defence,"5'9"""
-,Sean Kuraly,Forward,"6'2"""
-,Jeremy Lauzon,Defence,"6'1"""
-,Par Lindholm,Forward,"6'0"""
-,Brad Marchand,Forward,"5'9"""
-,Charlie McAvoy,Defence,"6'0"""
-,John Moore,Defence,"6'2"""
-,Joakim Nordstrom,Forward,"6'1"""
-,David Pastrnak,Forward,"6'0"""
-,Tuukka Rask,Goalie,"6'3"""
-,Nick Ritchie,Forward,"6'2"""
-,Chris Wagner,Forward,"6'0"""
-,Pavel Buchnevich,Forward,"6'3"""
-,Filip Chytil,Forward,"6'2"""
-,Anthony DeAngelo,Defence,"5'11"""
-,Phillip Di Giuseppe,Forward,"6'0"""
-,Jesper Fast,Forward,"6'1"""
-,Steven Fogarty,Forward,"6'3"""
-,Adam Fox,Defence,"5'10"""
-,Julien Gauthier,Forward,"6'4"""
-,Alexandar Georgiev,Goalie,"6'1"""
-,Brett Howden,Forward,"6'3"""
-,Kaapo Kakko,Forward,"6'1"""
-,Chris Kreider,Forward,"6'3"""
-,Brendan Lemieux,Forward,"6'1"""
-,Ryan Lindgren,Defence,"6'0"""
-,Henrik Lundqvist,Goalie,"6'1"""
-,Greg McKegg,Forward,"6'0"""
-,Artemi Panarin,Forward,"5'11"""
-,Igor Shesterkin,Goalie,"6'2"""
-,Brendan Smith,Defence,"6'2"""
-,Marc Staal,Defence,"6'4"""
-,Ryan Strome,Forward,"6'1"""
-,Jacob Trouba,Defence,"6'3"""
-,Mika Zibanejad,Forward,"6'2"""
-,Justin Abdelkader,Forward,"6'2"""
-,Jonathan Bernier,Goalie,"6'0"""
-,Tyler Bertuzzi,Forward,"6'1"""
-,Alex Biega,Defence,"5'10"""
-,Madison Bowey,Defence,"6'2"""
-,Trevor Daley,Defence,"5'11"""
-,Christoffer Ehn,Forward,"6'3"""
-,Jonathan Ericsson,Defence,"6'4"""
-,Adam Erne,Forward,"6'1"""
-,Robby Fabbri,Forward,"5'10"""
-,Valtteri Filppula,Forward,"6'0"""
-,Sam Gagner,Forward,"5'11"""
-,Luke Glendening,Forward,"5'11"""
-,Cody Goloubef,Defence,"6'1"""
-,Darren Helm,Forward,"6'0"""
-,Jimmy Howard,Goalie,"6'1"""
-,Filip Hronek,Defence,"6'0"""
-,Dylan Larkin,Forward,"6'1"""
-,Gustav Lindstrom,Defence,"6'2"""
-,Anthony Mantha,Forward,"6'5"""
-,Patrik Nemeth,Defence,"6'3"""
-,Frans Nielsen,Forward,"6'1"""
-,Brendan Perlini,Forward,"6'3"""
-,Dmytro Timashov,Forward,"5'10"""
+﻿name,player_position,height_inches
+Paul Byron,Forward,68
+Phillip Danault,Forward,72
+Max Domi,Forward,70
+Jonathan Drouin,Forward,71
+Jake Evans,Forward,73
+Nick Suzuki,Forward,71
+Jordan Weal,Forward,69
+Charles Hudon,Forward,70
+Artturi Lehkonen,Forward,72
+Tomas Tatar,Forward,71
+Joel Armia,Forward,75
+Brendan Gallagher,Forward,69
+Dale Weise,Forward,74
+Karl Alzner,Defence,75
+Ben Chiaro,Defence,75
+Christian Folin,Defence,75
+Brett Kulak,Defence,74
+Victor Mete,Defence,69
+Xavier Ouellet,Defence,73
+Jeff Petry,Defence,75
+Shea Weber,Defence,76
+Charlie Lindgren,Goalie,73
+Carey Price,Goalie,75
+Frederik Gauthier,Forward,77
+Zach Hyman,Forward,73
+Alexander Kerfoot,Forward,70
+Denis Malgin,Forward,69
+Mitch Marner,Forward,72
+Auston Matthews,Forward,74
+Jason Spezza,Forward,75
+John Tavares,Forward,73
+Kyle Clifford,Forward,74
+Pierre Engvall,Forward,77
+Andreas Johnsson,Forward,70
+Kasperi Kapanen,Forward,73
+Ilya Mikheyev,Forward,75
+William Nylander,Forward,72
+Tyson Barrie,Defence,70
+Cody Ceci,Defence,75
+Travis Dermott,Defence,72
+Justin Hol,Defence,75
+Martin Marincin,Defence,76
+Jake Muzzi,Defence,75
+Morgan Rielly,Defence,73
+Calle Rosen,Defence,73
+Rasmus Sandin,Defence,71
+Frederik Andersen,Goalie,76
+Jack Campbell,Goalie,75
+Drake Caggiula,Forward,70
+Ryan Carpenter,Forward,72
+Kirby Dach,Forward,76
+Matthew Highmore,Forward,71
+David Kampf,Forward,74
+Andrew Shaw,Forward,71
+Zack Smith,Forward,74
+Dylan Strome,Forward,75
+Jonathan Toews,Forward,74
+Brandon Hagel,Defence,71
+Dominik Kubali,Defence,74
+Alex Nylander,Defence,73
+Brandon Saad,Defence,73
+Alex DeBrincat,Defence,67
+Patrick Kane,Defence,70
+Nicolas Beaudin,Defence,71
+Adam Boqvist,Defence,71
+Lucas Carlsson,Defence,72
+Duncan Keit,Defence,73
+Slater Koekkoek,Defence,74
+Olli Maatt,Defence,74
+Connor Murph,Defence,76
+Brent Seabroo,Defence,75
+Nick Seeler,Defence,74
+Calvin de Haan,Defence,73
+Corey Crawford,Goalie,74
+Malcolm Subban,Goalie,74
+Patrice Bergeron,Forward,73
+Anders Bjork,Forward,72
+Anton Blidh,Forward,72
+Brandon Carlo,Defence,77
+Zdeno Chara,Defence,81
+Connor Clifton,Defence,71
+Charlie Coyle,Forward,75
+Jake DeBrusk,Forward,72
+Matt Grzelcyk,Defence,69
+Jaroslav Halak,Goalie,71
+Ondrej Kase,Forward,71
+David Krejci,Forward,72
+Torey Krug,Defence,69
+Sean Kuraly,Forward,74
+Jeremy Lauzon,Defence,71
+Par Lindholm,Forward,72
+Brad Marchand,Forward,69
+Charlie McAvoy,Defence,72
+John Moore,Defence,74
+Joakim Nordstrom,Forward,73
+David Pastrnak,Forward,72
+Tuukka Rask,Goalie,75
+Nick Ritchie,Forward,74
+Chris Wagner,Forward,72
+Pavel Buchnevich,Forward,75
+Filip Chytil,Forward,74
+Anthony DeAngelo,Defence,71
+Phillip Di Giuseppe,Forward,72
+Jesper Fast,Forward,73
+Steven Fogarty,Forward,75
+Adam Fox,Defence,70
+Julien Gauthier,Forward,76
+Alexandar Georgiev,Goalie,73
+Brett Howden,Forward,75
+Kaapo Kakko,Forward,73
+Chris Kreider,Forward,75
+Brendan Lemieux,Forward,73
+Ryan Lindgren,Defence,72
+Henrik Lundqvist,Goalie,73
+Greg McKegg,Forward,72
+Artemi Panarin,Forward,71
+Igor Shesterkin,Goalie,74
+Brendan Smith,Defence,74
+Marc Staal,Defence,76
+Ryan Strome,Forward,73
+Jacob Trouba,Defence,75
+Mika Zibanejad,Forward,74
+Justin Abdelkader,Forward,74
+Jonathan Bernier,Goalie,72
+Tyler Bertuzzi,Forward,73
+Alex Biega,Defence,70
+Madison Bowey,Defence,74
+Trevor Daley,Defence,71
+Christoffer Ehn,Forward,75
+Jonathan Ericsson,Defence,76
+Adam Erne,Forward,73
+Robby Fabbri,Forward,70
+Valtteri Filppula,Forward,72
+Sam Gagner,Forward,71
+Luke Glendening,Forward,71
+Cody Goloubef,Defence,73
+Darren Helm,Forward,72
+Jimmy Howard,Goalie,73
+Filip Hronek,Defence,72
+Dylan Larkin,Forward,73
+Gustav Lindstrom,Defence,74
+Anthony Mantha,Forward,77
+Patrik Nemeth,Defence,75
+Frans Nielsen,Forward,73
+Brendan Perlini,Forward,75
+Dmytro Timashov,Forward,70
