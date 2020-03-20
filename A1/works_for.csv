@@ -1,0 +1,14 @@
+hp_id,staff_name,team_name,start_date,end_date,title
+49,Sheldon Keefe,Toronto Maple Leafs,2019-11-20,NULL,Head Coach
+50,Claude Julien,Montreal Canadiens,2017-02-14,NULL,Head Coach
+78,Jeremy Colliton,Chicago Blackhawks,2018-11-06,NULL,Head Coach
+103,Bruce Cassidy,Boston Bruins,2017-02-07,NULL,Head Coach
+127,David Quinn,New York Rangers,2018-05-23,NULL,Head Coach
+128,Jeff Blashill,Detroit Red Wings,2014-06-04,NULL,Head Coach
+153,Kyle Dubas,Toronto Maple Leafs,2018-05-11,NULL,General Manager
+154,Stan Bowman,Chicago Blackhawks,2009-07-14,NULL,General Manager
+155,Steve Yzerman,Detroit Red Wings,2019-04-19,NULL,General Manager
+156,Jeff Gorton,New York Rangers,2015-07-01,NULL,General Manager
+156,Jeff Gorton,Boston Bruins,2006-07-15,2007-06-27,General Manager
+50,Claude Julien,Boston Bruins,2007-06-22,2017-02-07,Head Coach
+157,Marc Bergevin,Montreal Canadiens,2012-05-12,NULL,General Manager
